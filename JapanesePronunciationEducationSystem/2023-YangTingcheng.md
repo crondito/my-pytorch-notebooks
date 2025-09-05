@@ -41,13 +41,25 @@ TOYOHASHI UNIVERSITY OF TECHNOLOGY
 
 >**Goal:** Use deep learning to help foreign Japanese learners, especially beginners, improve pronunciation.
 
-- Main Contributions:
-    - Develop a speech scoring model → automatically evaluates pronunciation quality.
-    - Build a wrong pronunciation detection system → identifies specific pronunciation errors.
+#### Main Contributions:
 
-- Speech Scoring Model:
+- Develop a ***speech scoring model*** → automatically evaluates pronunciation quality.
+
     - Uses <abbr title="Measurable characteristics of a speech signal that represent how sounds are produced and perceived">acoustic features</abbr> to generate pronunciation scores.
     - Does not rely on <abbr title="Automatic Speech Recognition">ASR</abbr> or phoneme/word-level labels.
-    - Based on <abbr title="A speech recognition model that directly maps audio to text using a single integrated neural network.">End-to-End ASR</abbr> architecture but adapted for scoring.
+    - Based on <abbr title="A speech recognition system where the model directly converts raw audio input into text output in a single neural network, without using separate components for feature extraction, phoneme modeling, and decoding.">End-to-End ASR</abbr> architecture but adapted for scoring.
     - Tests different model structures to improve performance.
 
+- Build a ***wrong pronunciation detection system*** → identifies specific pronunciation errors.
+
+    - Designed for <abbr title="Learners read a predetermined script, allowing the system to compare spoken audio with the expected text and detect pronunciation errors precisely.">fixed-text</abbr> reading practice.
+    - Two proposed methods:
+        - Label-based ASR training → train an ASR model with specific wrong pronunciation labels to detect errors automatically.
+        - Direct transcription approach → train ASR on data containing wrong pronunciations so the system recognizes mispronunciations explicitly.
+    - A detector compares the expected text with the recognized text to identify pronunciation mistakes.
+
+## Related work
+
+- Automatic speech scoring and wrong pronunciation detection are key in pronunciation assessment
+- Early assessments relied on manual raters → time-consuming and expensive
+- With NLP, machine learning, and deep learning, automatic pronunciation assessment became possible.
